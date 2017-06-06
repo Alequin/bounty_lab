@@ -21,6 +21,8 @@ hunter2.save()
 hunter1.name = "Josepi Scotland"
 hunter1.update
 
-hunter1.delete()
-hunter2.delete()
+# hunter1.delete ()
+# hunter2.delete ()
 
+hunter3 = BountyHunter.find(1)
+puts hunter3.name

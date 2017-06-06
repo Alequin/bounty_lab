@@ -55,12 +55,12 @@ class BountyHunter
     db.close()
   end
 
-  def BountyHunter.find(name)
+  def BountyHunter.find(id)
     db = PG.connect ({dbname: "bounty_hunter", host: "localhost"})
-    sql = "SELECT * FROM bounty_properties WHERE name = #{name};"
+    sql = "SELECT * FROM bounty_properties WHERE id = #{id};"
     bounty_hunters = db.exec(sql)
     db.close()
-    return BountyHunter.new(bounty_hunters)
+    return BountyHunter.new(bounty_hunters[0])
   end
 
 
